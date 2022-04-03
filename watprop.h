@@ -32,9 +32,12 @@
 // that uses this DLL. This way any other project whose source files include this file see 
 // WATPROP_API functions as being imported from a DLL, whereas this DLL sees symbols
 // defined with this macro as being exported.
-#define WATPROP_API							
+#define WATPROP_API	
+#define LPXLOPER12 double
+#define XLOPER12 double						
+typedef wchar_t* LPWSTR, *PWSTR;
 
-WATPROP_API LPXLOPER12 _WatpropPyVersion(void);
+WATPROP_API LPWSTR _WatpropPyVersion(void);
 
 WATPROP_API LPXLOPER12 // returns specific enthalpy as a function of pressure and temperature 
 _H_PT(double p // pressure

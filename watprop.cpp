@@ -98,9 +98,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return a string containing the WATPROP version
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _WatpropPyVersion(void)
+ LPWSTR _WatpropPyVersion(void)
 {
-	return (LPXLOPER12)TempStr12(watpropPy_version);
+	return watpropPy_version;
 } 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -115,7 +115,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _H_PT(double p, double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -155,14 +154,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = h;
-		return (LPXLOPER12) &xResult;
+		return h;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -178,7 +174,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _V_PT(double p, double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -214,14 +209,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// convert units
 		if (output_units== ENGLISH)
 			v = convert_spvolume_si_to_english(v);
-		xResult.xltype = xltypeNum;
-		xResult.val.num = v;
-		return (LPXLOPER12) &xResult;
+		return v;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -237,7 +229,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _W_PT(double p, double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -277,14 +268,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			w = convert_w_si_to_english(w);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = w;
-		return (LPXLOPER12) &xResult;
+		return w;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -299,7 +287,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _HF_T(double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -330,14 +317,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = h;
-		return (LPXLOPER12) &xResult;
+		return h;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -352,7 +336,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _HG_T(double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -383,14 +366,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = h;
-		return (LPXLOPER12) &xResult;
+		return h;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -405,7 +385,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _VF_T(double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -435,14 +414,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = v;
-		return (LPXLOPER12) &xResult;
+		return v;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -457,7 +433,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _VG_T(double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -487,14 +462,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = v;
-		return (LPXLOPER12) &xResult;
+		return v;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -509,7 +481,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _P_T(double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -525,14 +496,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			p = convert_pressure_si_to_english(p);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = p;
-		return (LPXLOPER12) &xResult;
+		return p;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -547,7 +515,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _T_P(double p, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -563,14 +530,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		else
 			t=convert_temp_kelvin_to_centigrade(t);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = t;
-		return (LPXLOPER12) &xResult;
+		return t;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -586,7 +550,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _S_PT(double p, double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -626,14 +589,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = s;
-		return (LPXLOPER12) &xResult;
+		return s;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -649,7 +609,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _CP_PT(double p, double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -689,14 +648,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		if (output_units== ENGLISH)
 			cp = convert_cp_si_to_english(cp);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = cp;
-		return (LPXLOPER12) &xResult;
+		return cp;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -712,7 +668,6 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _VIS_PT(double p, double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	double t_star = 647.226;
 	double d_star = 317.763;
 	double vis_star = 55.071e-6;
@@ -785,14 +740,11 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		else
 			vis = vis * 1E6; // convert to microPa*sec
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = vis;
-		return (LPXLOPER12) &xResult;
+		return vis;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -836,7 +788,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _K_PT(double p, double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -921,15 +872,12 @@ const double THCON_a[THCON_a_COUNT] = {
 		else
 			k = k * 1E3; // convert to mW/m/K
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = k;
-		return (LPXLOPER12) &xResult;
+		return k;
 
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -944,7 +892,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _SF_T(double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -975,14 +922,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = s;
-		return (LPXLOPER12) &xResult;
+		return s;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -997,7 +941,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _SG_T(double t, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1028,14 +971,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = s;
-		return (LPXLOPER12) &xResult;
+		return s;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1050,7 +990,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _HF_P(double p, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1078,14 +1017,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = h;
-		return (LPXLOPER12) &xResult;
+		return h;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1100,7 +1036,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _HG_P(double p, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1128,14 +1063,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = h;
-		return (LPXLOPER12) &xResult;
+		return h;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1150,7 +1082,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _VF_P(double p, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1177,14 +1108,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = v;
-		return (LPXLOPER12) &xResult;
+		return v;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1199,7 +1127,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _VG_P(double p, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1226,14 +1153,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = v;
-		return (LPXLOPER12) &xResult;
+		return v;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1248,7 +1172,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _SF_P(double p, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1276,14 +1199,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = s;
-		return (LPXLOPER12) &xResult;
+		return s;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1298,7 +1218,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _SG_P(double p, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1326,14 +1245,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = s;
-		return (LPXLOPER12) &xResult;
+		return s;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1349,7 +1265,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _T_PH(double p, double h, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1387,14 +1302,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		else
 			t=convert_temp_kelvin_to_centigrade(t);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = t;
-		return (LPXLOPER12) &xResult;
+		return t;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1410,7 +1322,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _V_PH(double p, double h, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1446,14 +1357,11 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = v;
-		return (LPXLOPER12) &xResult;
+		return v;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
 	}
 }
 
@@ -1469,7 +1377,6 @@ const double THCON_a[THCON_a_COUNT] = {
 ///////////////////////////////////////////////////////////////////////////////
  LPXLOPER12 _S_PH(double p, double h, char * Xiunits, char * Xounits)
 {
-	static XLOPER12 xResult;
 	try {
 		std::string iunits = Xiunits;
 		std::string ounits = Xounits;
@@ -1505,13 +1412,13 @@ const double THCON_a[THCON_a_COUNT] = {
 		if (output_units== ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
-		xResult.xltype = xltypeNum;
-		xResult.val.num = s;
-		return (LPXLOPER12) &xResult;
+		return s;
 	}
 	catch(...) {
-		xResult.xltype = xltypeErr;
-		xResult.val.err = xlerrValue;
-		return (LPXLOPER12) &xResult;
+		// for now, just rethrow the original error
+		throw;
+		//xResult.xltype = xltypeErr;
+		//xResult.val.err = xlerrValue;
+		//return (LPXLOPER12) &xResult;
 	}
 }

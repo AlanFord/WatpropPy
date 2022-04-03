@@ -18,7 +18,7 @@ OBJECTS = $(CPP_OBJECTS) $(C_OBJECTS)
 all: $(TARGET_LIB)
 
 $(TARGET_LIB): $(OBJECTS)
-	$(CC) $(LDFLAGS) -o $(TARGET_LIB) $(OBJECTS)
+	$(GPP) $(LDFLAGS) -o $(TARGET_LIB) $(OBJECTS)
 
 %.o: %.cpp $(APP_H_FILES)
 	$(GPP) -c -o $@ $< $(CPPFLAGS)
