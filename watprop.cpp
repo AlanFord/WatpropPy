@@ -30,11 +30,8 @@
   WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "stdafx.h"
-#include <xlcall.h>
 #include <math.h>
 #include <string>
-#include "framewrk.h"
 #include "watprop.h"
 #include "utilities.h"
 #include "iapws.h"
@@ -44,8 +41,8 @@
 ///
 ///  *****************UPDATE THIS STRING FOR EACH NEW RELEASE ***********************
 ////////////////////////////////////////////////////////
-static LPWSTR watprop_version = L"WATPROP-D Version P01";
-
+static LPWSTR watpropPy_version = L"WatpropPy";
+/*
 ////////////////////////////////////////////////////////
 ///	length of the rgFuncs table
 ////////////////////////////////////////////////////////
@@ -94,92 +91,17 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 	{L"T_P",					L"UBCC",  L"T_P",     L"Pressure, Input Units, Output Units",              L"1", L"Watprop-D", L"", L"", L"Returns the saturation temperature of water/steam as a function of pressure", L"", L"ENGLISH or SI", L"ENGLISH or SI", L""},
 	{L"WatpropVersion",         L"U",     L"Watprop_Version", L" ",                                        L"1", L"Watprop-D", L"", L"", L"Returns the WATPROP-D library version as a string", L"", L"", L"", L"" }
 };
-
+*/
 
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief returns the version number for the WATPROP library
 ///
 /// \return a string containing the WATPROP version
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 WatpropVersion(void)
+ LPXLOPER12 _WatpropPyVersion(void)
 {
-	return (LPXLOPER12)TempStr12(watprop_version);
-}
-
-
-///////////////////////////////////////////////////////////////////////////////
-/// \brief Excel's entry point for the XLL
-///
-/// xlAutoOpen
-///
-/// xlAutoOpen is how Microsoft Excel loads XLL files.
-/// When you open an XLL, Microsoft Excel calls the xlAutoOpen
-/// function, and nothing more.
-///
-/// More specifically, xlAutoOpen is called by Microsoft Excel:
-///
-///  - when you open this XLL file from the File menu,
-///  - when this XLL is in the XLSTART directory, and is
-///		automatically opened when Microsoft Excel starts,
-///  - when Microsoft Excel opens this XLL for any other reason, or
-///  - when a macro calls REGISTER(), with only one argument, which is the
-///		name of this XLL.
-///
-/// xlAutoOpen is also called by the Add-in Manager when you add this XLL
-/// as an add-in. The Add-in Manager first calls xlAutoAdd, then calls
-/// REGISTER("EXAMPLE.XLL"), which in turn calls xlAutoOpen.
-///
-/// xlAutoOpen should:
-///
-///  - register all the functions you want to make available while this
-///		XLL is open,
-///  - add any menus or menu items that this XLL supports,
-///  - perform any other initialization you need, and
-///  - return 1 if successful, or return 0 if your XLL cannot be opened.
-///
-/// \return 1 if successful, or 0 if the XLL cannot be opened.
-///////////////////////////////////////////////////////////////////////////////
- int xlAutoOpen(void)
-{
-
-	static XLOPER12 xDLL;	/* name of this DLL */
-	int i;					/* Loop index */
-
-	/*
-	** In the following block of code the name of the XLL is obtained by
-	** calling xlGetName. This name is used as the first argument to the
-	** REGISTER function to specify the name of the XLL. Next, the XLL loops
-	** through the rgFuncs[] table, registering each function in the table using
-	** xlfRegister. Functions must be registered before you can add a menu
-	** item.
-	*/
-
-	Excel12f(xlGetName, &xDLL, 0);
-
-    for (i=0;i<rgFuncsRows;i++) 
-	{
-		Excel12f(xlfRegister, 0, 1 + rgFuncsCols,
-			(LPXLOPER12)&xDLL,
-			(LPXLOPER12)TempStr12(rgFuncs[i][0]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][1]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][2]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][3]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][4]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][5]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][6]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][7]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][8]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][9]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][10]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][11]),
-			(LPXLOPER12)TempStr12(rgFuncs[i][12]));
-	}
-
-	/* Free the XLL filename */
-	Excel12f(xlFree, 0, 1, (LPXLOPER12)&xDLL);
-
-	return 1;
-}
+	return (LPXLOPER12)TempStr12(watpropPy_version);
+} 
 
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief calculates specific enthalpy as a function of pressure and temperature
@@ -191,7 +113,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 H_PT(double p, double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _H_PT(double p, double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -254,7 +176,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 V_PT(double p, double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _V_PT(double p, double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -313,7 +235,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return speed of sound
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 W_PT(double p, double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _W_PT(double p, double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -375,7 +297,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 HF_T(double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _HF_T(double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -428,7 +350,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 HG_T(double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _HG_T(double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -481,7 +403,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 VF_T(double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _VF_T(double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -533,7 +455,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 VG_T(double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _VG_T(double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -585,7 +507,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return pressure
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 P_T(double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _P_T(double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -623,7 +545,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return temperature
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 T_P(double p, char * Xiunits, char * Xounits)
+ LPXLOPER12 _T_P(double p, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -662,7 +584,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 S_PT(double p, double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _S_PT(double p, double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -725,7 +647,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return isobaric heat capacity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 CP_PT(double p, double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _CP_PT(double p, double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -788,7 +710,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return dynamic viscosity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 VIS_PT(double p, double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _VIS_PT(double p, double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	double t_star = 647.226;
@@ -912,7 +834,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return thermal conductivity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 K_PT(double p, double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _K_PT(double p, double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1020,7 +942,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 SF_T(double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _SF_T(double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1073,7 +995,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 SG_T(double t, char * Xiunits, char * Xounits)
+ LPXLOPER12 _SG_T(double t, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1126,7 +1048,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 HF_P(double p, char * Xiunits, char * Xounits)
+ LPXLOPER12 _HF_P(double p, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1176,7 +1098,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 HG_P(double p, char * Xiunits, char * Xounits)
+ LPXLOPER12 _HG_P(double p, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1226,7 +1148,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 VF_P(double p, char * Xiunits, char * Xounits)
+ LPXLOPER12 _VF_P(double p, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1275,7 +1197,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 VG_P(double p, char * Xiunits, char * Xounits)
+ LPXLOPER12 _VG_P(double p, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1324,7 +1246,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 SF_P(double p, char * Xiunits, char * Xounits)
+ LPXLOPER12 _SF_P(double p, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1374,7 +1296,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 SG_P(double p, char * Xiunits, char * Xounits)
+ LPXLOPER12 _SG_P(double p, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1425,7 +1347,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return temperature
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 T_PH(double p, double h, char * Xiunits, char * Xounits)
+ LPXLOPER12 _T_PH(double p, double h, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1486,7 +1408,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 V_PH(double p, double h, char * Xiunits, char * Xounits)
+ LPXLOPER12 _V_PH(double p, double h, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
@@ -1545,7 +1467,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 S_PH(double p, double h, char * Xiunits, char * Xounits)
+ LPXLOPER12 _S_PH(double p, double h, char * Xiunits, char * Xounits)
 {
 	static XLOPER12 xResult;
 	try {
