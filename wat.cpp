@@ -32,7 +32,7 @@
 
 #include <math.h>
 #include <string>
-#include "watprop.h"
+#include "wat.h"
 #include "utilities.h"
 #include "iapws.h"
 
@@ -41,7 +41,7 @@
 ///
 ///  *****************UPDATE THIS STRING FOR EACH NEW RELEASE ***********************
 ////////////////////////////////////////////////////////
-static LPWSTR watpropPy_version = L"WatpropPy";
+static LPWSTR watpropPy_version = "WatpropPy";
 /*
 ////////////////////////////////////////////////////////
 ///	length of the rgFuncs table

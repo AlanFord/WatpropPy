@@ -35,7 +35,7 @@
 #define WATPROP_API	
 #define LPXLOPER12 double
 #define XLOPER12 double						
-typedef wchar_t* LPWSTR, *PWSTR;
+typedef char16_t* LPWSTR, *PWSTR;
 
 WATPROP_API LPWSTR _WatpropPyVersion(void);
 
@@ -85,7 +85,7 @@ _T_P(double p // saturation pressure
 	  );
 
 WATPROP_API LPXLOPER12 // returns specific entropy as a function of pressure and temperature 
-S_PT(double p // pressure
+_S_PT(double p // pressure
 	 , double t // temperature
 	, char * iunits  // units of measure for inputs
 	, char * ounits  // units of measure for output

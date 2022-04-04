@@ -17,6 +17,10 @@ OBJECTS = $(CPP_OBJECTS) $(C_OBJECTS)
 .PHONY: all
 all: $(TARGET_LIB)
 
+cython:
+	-rm -r build watprop.c watprop.*.so
+	python setup.py build_ext -if
+
 $(TARGET_LIB): $(OBJECTS)
 	$(GPP) $(LDFLAGS) -o $(TARGET_LIB) $(OBJECTS)
 
@@ -27,4 +31,4 @@ $(TARGET_LIB): $(OBJECTS)
 	$(GCC) -c -o $@ $< $(CFLAGS)
 
 clean:
-	-rm -r *.o *.so
+	-rm -r *.o *.so watprop.c watprop.*.so
