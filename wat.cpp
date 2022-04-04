@@ -41,7 +41,7 @@
 ///
 ///  *****************UPDATE THIS STRING FOR EACH NEW RELEASE ***********************
 ////////////////////////////////////////////////////////
-static LPWSTR watpropPy_version = "WatpropPy";
+static LPWSTR watpropPy_version = L"WatpropPy";
 /*
 ////////////////////////////////////////////////////////
 ///	length of the rgFuncs table

@@ -35,7 +35,7 @@
 #define WATPROP_API	
 #define LPXLOPER12 double
 #define XLOPER12 double						
-typedef char16_t* LPWSTR, *PWSTR;
+typedef wchar_t* LPWSTR, *PWSTR;
 
 WATPROP_API LPWSTR _WatpropPyVersion(void);
 

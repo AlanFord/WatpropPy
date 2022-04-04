@@ -1,5 +1,4 @@
 cdef extern from "wat.h":
-    char_t* _WatpropPyVersion()
     double _H_PT(double p, double t, char * iunits, char * ounits)
     double _V_PT(double p, double t, char * iunits, char * ounits)
     double _W_PT(double p, double t, char * iunits, char * ounits)
