@@ -35,149 +35,149 @@
 #define WATPROP_API	
 #define LPXLOPER12 double
 #define XLOPER12 double						
-typedef char* LPWSTR, *PWSTR;
+//typedef char* LPWSTR, *PWSTR;
 
 WATPROP_API const char * _WatpropPyVersion(void);
 
 WATPROP_API LPXLOPER12 // returns specific enthalpy as a function of pressure and temperature 
 _H_PT(double p // pressure
 	 , double t // temperature
-	 , char * iunits // units of measure for inputs
-	 , char * ounits // units of measure for output
+	 , const char * iunits // units of measure for inputs
+	 , const char * ounits // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns specific volume as a function of pressure and temperature 
 _V_PT(double p // pressure
 	 , double t // temperature
-	 , char * iunits // units of measure for inputs
-	 , char * ounits // units of measure for output
+	 , const char * iunits // units of measure for inputs
+	 , const char * ounits // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns speed of sound as a function of pressure and temperature 
 _W_PT(double p // pressure
 	 , double t // temperature
-	 , char * iunits // units of measure for inputs
-	 , char * ounits // units of measure for output
+	 , const char * iunits // units of measure for inputs
+	 , const char * ounits // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns liquid saturation specific enthalpy as a function of temperature 
 _HF_T(double t // temperature
-	 , char * iunits // units of measure for inputs
-	 , char * ounits // units of measure for output
+	 , const char * iunits // units of measure for inputs
+	 , const char * ounits // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns vapor saturation specific enthalpy as a function of temperature 
 _HG_T(double t // temperature
-	 , char * iunits // units of measure for inputs
-	 , char * ounits // units of measure for output
+	 , const char * iunits // units of measure for inputs
+	 , const char * ounits // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns saturation pressure from saturation temperature
 _P_T(double t // saturation temperature
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	);
    
 WATPROP_API LPXLOPER12 // returns saturation temperature from saturation pressure
 _T_P(double p // saturation pressure
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns specific entropy as a function of pressure and temperature 
 _S_PT(double p // pressure
 	 , double t // temperature
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns isobaric heat capacity as a function of pressure and temperature 
 _CP_PT(double p // pressure
 	 , double t // temperature
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns viscosity as a function of pressure and temperature 
 _VIS_PT(double p // pressure
 	 , double t // temperature
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns thermal conductivity as a function of pressure and temperature 
 _K_PT(double p // pressure
 	 , double t // temperature
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns liquid saturation specific entropy as a function of temperature 
 _SF_T(double t // temperature
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 
 WATPROP_API LPXLOPER12 // returns vapor saturation specific entropy as a function of temperature 
 _SG_T(double t // temperature
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns liquid saturation specific enthalpy as a function of pressure 
 _HF_P(double p // pressure
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns vapor saturation specific enthalpy as a function of pressure 
 _HG_P(double p // pressure
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns liquid saturation specific volume as a function of pressure 
 _VF_P(double p // pressure
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns vapor saturation specific volume as a function of pressure 
 _VG_P(double p // pressure
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns liquid saturation specific entropy as a function of pressure 
 _SF_P(double p // pressure
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns vapor saturation specific entropy as a function of pressure 
 _SG_P(double p // pressure
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns temperature as a function of pressure and specific enthalpy 
 _T_PH(double p // pressure
 	 , double h // enthalpy
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns specific volume as a function of pressure and specific enthalpy 
 _V_PH(double p // pressure
 	 , double h // enthalpy
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
 
 WATPROP_API LPXLOPER12 // returns specific entropy as a function of pressure and specific enthalpy 
 _S_PH(double p // pressure
 	 , double h // enthalpy
-	, char * iunits  // units of measure for inputs
-	, char * ounits  // units of measure for output
+	, const char * iunits  // units of measure for inputs
+	, const char * ounits  // units of measure for output
 	  );
