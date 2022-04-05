@@ -80,7 +80,7 @@ const double english_vis = 6.719690e-1;
 ///	\brief W/m/K to Btu/hr/ft/F thermal conductivity conversion factor.
 ////////////////////////////////////////////////////////
 const double english_k = 0.5777893;
-
+/*
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief checks to see if a string variable represents a valid set of input
 ///  units of measurement
@@ -130,7 +130,7 @@ int check_output_units(std::string units)
 	else
 		throw "bad output units";
 }
-
+*/
 ///////////////////////////////////////////////////////////////////////////////
 /// \brief converts pressure from si units to english units
 ///
