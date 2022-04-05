@@ -41,7 +41,7 @@
 ///
 ///  *****************UPDATE THIS STRING FOR EACH NEW RELEASE ***********************
 ////////////////////////////////////////////////////////
-static LPWSTR watpropPy_version = L"WatpropPy";
+const char * watpropPy_version = "WatpropPy";
 /*
 ////////////////////////////////////////////////////////
 ///	length of the rgFuncs table
@@ -98,7 +98,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return a string containing the WATPROP version
 ///////////////////////////////////////////////////////////////////////////////
- LPWSTR _WatpropPyVersion(void)
+ const char * _WatpropPyVersion(void)
 {
 	return watpropPy_version;
 } 

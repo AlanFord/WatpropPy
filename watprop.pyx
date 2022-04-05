@@ -1,4 +1,4 @@
-# ...setup: sources=["wat.cpp"]
+# cython: c_string_type=str, c_string_encoding=ascii
 cimport wat
 
 def H_PT(double p, double t, char * iunits, char * ounits):

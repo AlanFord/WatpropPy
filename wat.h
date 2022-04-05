@@ -35,9 +35,9 @@
 #define WATPROP_API	
 #define LPXLOPER12 double
 #define XLOPER12 double						
-typedef wchar_t* LPWSTR, *PWSTR;
+typedef char* LPWSTR, *PWSTR;
 
-WATPROP_API LPWSTR _WatpropPyVersion(void);
+WATPROP_API const char * _WatpropPyVersion(void);
 
 WATPROP_API LPXLOPER12 // returns specific enthalpy as a function of pressure and temperature 
 _H_PT(double p // pressure
