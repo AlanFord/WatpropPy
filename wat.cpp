@@ -108,19 +108,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \param[in] p pressure
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _H_PT(double p, double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _H_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			t = convert_temp_english_to_kelvin(t);
 		} 
@@ -151,7 +147,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 				throw "invalid region number in h_pt";
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
 		return h;
@@ -167,19 +163,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \param[in] p pressure
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _V_PT(double p, double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _V_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			t = convert_temp_english_to_kelvin(t);
 		} 
@@ -207,7 +199,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 				throw "invalid region number in v_pt";
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		return v;
 	}
@@ -222,19 +214,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \param[in] p pressure
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return speed of sound
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _W_PT(double p, double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _W_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			t = convert_temp_english_to_kelvin(t);
 		} 
@@ -265,7 +253,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 				throw "invalid region number in w_pt";
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			w = convert_w_si_to_english(w);
 		// return
 		return w;
@@ -280,19 +268,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 /// \brief calculates saturated liquid specific enthalpy as a function of temperature
 ///
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _HF_T(double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _HF_T(double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			t = convert_temp_english_to_kelvin(t);
 		} 
 		else {
@@ -314,7 +298,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 			h = h_dt_3(d,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
 		return h;
@@ -329,19 +313,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 /// \brief calculates saturated vapor specific enthalpy as a function of temperature
 ///
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _HG_T(double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _HG_T(double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			t = convert_temp_english_to_kelvin(t);
 		} 
 		else {
@@ -363,7 +343,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 			h = h_dt_3(d,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
 		return h;
@@ -378,19 +358,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 /// \brief calculates saturated liquid specific volume as a function of temperature
 ///
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VF_T(double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _VF_T(double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			t = convert_temp_english_to_kelvin(t);
 		} 
 		else {
@@ -411,7 +387,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 			v = 1 / df_pt_3(p,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
 		return v;
@@ -426,19 +402,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 /// \brief calculates saturated vapor specific volume as a function of temperature
 ///
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VG_T(double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _VG_T(double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			t = convert_temp_english_to_kelvin(t);
 		} 
 		else {
@@ -459,7 +431,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 			v = 1 / dv_pt_3(p,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
 		return v;
@@ -474,26 +446,22 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 /// \brief calculates saturation pressure as a function of temperature
 ///
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return pressure
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _P_T(double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _P_T(double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
 		// convert the temperature to kelvin if necessary
-		if (input_units== ENGLISH)
+		if (input_units ==  ENGLISH)
 			t = convert_temp_english_to_kelvin(t);
 		else
 			t = convert_temp_centigrade_to_kelvin(t);
 		check_saturated_t(t);
 		double p = PSAT_T(t);
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			p = convert_pressure_si_to_english(p);
 		// return
 		return p;
@@ -508,24 +476,20 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 /// \brief calculates saturation temperature as a function of pressure
 ///
 /// \param[in] p pressure
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return temperature
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _T_P(double p, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _T_P(double p, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
 		// convert the pressure to MPa if necessary
-		if (input_units== ENGLISH)
+		if (input_units ==  ENGLISH)
 			p = convert_pressure_english_to_si(p);
 		check_saturated_p(p);
 		double t = TSAT_P(p);
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			t=convert_temp_kelvin_to_english(t);
 		else
 			t=convert_temp_kelvin_to_centigrade(t);
@@ -543,19 +507,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \param[in] p pressure
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _S_PT(double p, double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _S_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			t = convert_temp_english_to_kelvin(t);
 		} 
@@ -586,7 +546,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 				throw "invalid region number in s_pt";
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
 		return s;
@@ -602,19 +562,15 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \param[in] p pressure
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return isobaric heat capacity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _CP_PT(double p, double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _CP_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			t = convert_temp_english_to_kelvin(t);
 		} 
@@ -645,7 +601,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 				throw "invalid region number in cp_pt";
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			cp = convert_cp_si_to_english(cp);
 		// return
 		return cp;
@@ -661,22 +617,18 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \param[in] p pressure
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return dynamic viscosity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VIS_PT(double p, double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _VIS_PT(double p, double t, Units input_units, Units output_units)
 {
 	double t_star = 647.226;
 	double d_star = 317.763;
 	double vis_star = 55.071e-6;
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			t = convert_temp_english_to_kelvin(t);
 		} 
@@ -735,7 +687,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// combined parts
 		double vis = part1*part2*vis_star;
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			vis = convert_vis_si_to_english(vis);
 		else
 			vis = vis * 1E6; // convert to microPa*sec
@@ -781,19 +733,15 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \param[in] p pressure
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return thermal conductivity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _K_PT(double p, double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _K_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			t = convert_temp_english_to_kelvin(t);
 		} 
@@ -867,7 +815,7 @@ const double THCON_a[THCON_a_COUNT] = {
 				exp(THCON_C2 * pow(Tbar,1.5) + THCON_C3 / pow(rhobar,5));
 		double k = l0+l1+l2;
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			k = convert_k_si_to_english(k);
 		else
 			k = k * 1E3; // convert to mW/m/K
@@ -885,19 +833,15 @@ const double THCON_a[THCON_a_COUNT] = {
 /// \brief calculates saturated vapor specific entropy as a function of temperature
 ///
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _SF_T(double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _SF_T(double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			t = convert_temp_english_to_kelvin(t);
 		} 
 		else {
@@ -919,7 +863,7 @@ const double THCON_a[THCON_a_COUNT] = {
 			s = s_dt_3(d,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
 		return s;
@@ -934,19 +878,15 @@ const double THCON_a[THCON_a_COUNT] = {
 /// \brief calculates saturated vapor specific entropy as a function of temperature
 ///
 /// \param[in] t temperature
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _SG_T(double t, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _SG_T(double t, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			t = convert_temp_english_to_kelvin(t);
 		} 
 		else {
@@ -968,7 +908,7 @@ const double THCON_a[THCON_a_COUNT] = {
 			s = s_dt_3(d,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
 		return s;
@@ -983,19 +923,15 @@ const double THCON_a[THCON_a_COUNT] = {
 /// \brief calculates saturated liquid specific enthalpy as a function of pressure
 ///
 /// \param[in] p pressure
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _HF_P(double p, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _HF_P(double p, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 		} 
 		// verify that saturation conditions can exist at this pressure
@@ -1014,7 +950,7 @@ const double THCON_a[THCON_a_COUNT] = {
 			h = h_dt_3(d,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
 		return h;
@@ -1029,19 +965,15 @@ const double THCON_a[THCON_a_COUNT] = {
 /// \brief calculates saturated vapor specific enthalpy as a function of pressure
 ///
 /// \param[in] p pressure
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _HG_P(double p, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _HG_P(double p, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 		} 
 		// verify that saturation conditions can exist at this pressure
@@ -1060,7 +992,7 @@ const double THCON_a[THCON_a_COUNT] = {
 			h = h_dt_3(d,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			h = convert_enthalpy_si_to_english(h);
 		// return
 		return h;
@@ -1075,19 +1007,15 @@ const double THCON_a[THCON_a_COUNT] = {
 /// \brief calculates saturated liquid specific volume as a function of pressure
 ///
 /// \param[in] p pressure
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VF_P(double p, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _VF_P(double p, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 		} 
 		// verify that saturation conditions can exist at this pressure
@@ -1105,7 +1033,7 @@ const double THCON_a[THCON_a_COUNT] = {
 			v = 1 / df_pt_3(p,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
 		return v;
@@ -1120,19 +1048,15 @@ const double THCON_a[THCON_a_COUNT] = {
 /// \brief calculates saturated vapor specific volume as a function of pressure
 ///
 /// \param[in] p pressure
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VG_P(double p, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _VG_P(double p, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 		} 
 		// verify that saturation conditions can exist at this pressure
@@ -1150,7 +1074,7 @@ const double THCON_a[THCON_a_COUNT] = {
 			v = 1 / dv_pt_3(p,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
 		return v;
@@ -1165,19 +1089,15 @@ const double THCON_a[THCON_a_COUNT] = {
 /// \brief calculates saturated liquid specific enthalpy as a function of pressure
 ///
 /// \param[in] p pressure
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _SF_P(double p, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _SF_P(double p, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 		} 
 		// verify that saturation conditions can exist at this pressure
@@ -1196,7 +1116,7 @@ const double THCON_a[THCON_a_COUNT] = {
 			s = s_dt_3(d,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
 		return s;
@@ -1211,19 +1131,15 @@ const double THCON_a[THCON_a_COUNT] = {
 /// \brief calculates saturated vapor specific enthalpy as a function of pressure
 ///
 /// \param[in] p pressure
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _SG_P(double p, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _SG_P(double p, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 		} 
 		// verify that saturation conditions can exist at this pressure
@@ -1242,7 +1158,7 @@ const double THCON_a[THCON_a_COUNT] = {
 			s = s_dt_3(d,t);
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
 		return s;
@@ -1258,19 +1174,15 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \param[in] p pressure
 /// \param[in] h specific enthalpy
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return temperature
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _T_PH(double p, double h, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _T_PH(double p, double h, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			h = convert_enthalpy_english_to_si(h);
 		} 
@@ -1297,7 +1209,7 @@ const double THCON_a[THCON_a_COUNT] = {
 				throw "invalid region number in t_ph";
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			t=convert_temp_kelvin_to_english(t);
 		else
 			t=convert_temp_kelvin_to_centigrade(t);
@@ -1315,19 +1227,15 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \param[in] p pressure
 /// \param[in] h specific enthalpy
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _V_PH(double p, double h, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _V_PH(double p, double h, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			h = convert_enthalpy_english_to_si(h);
 		}
@@ -1354,7 +1262,7 @@ const double THCON_a[THCON_a_COUNT] = {
 				throw "invalid region number in v_ph";
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			v = convert_spvolume_si_to_english(v);
 		// return
 		return v;
@@ -1370,19 +1278,15 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \param[in] p pressure
 /// \param[in] h specific enthalpy
-/// \param[in] Xiunits input units of measure
-/// \param[in] Xounits output units of measure
+/// \param[in] input_units input units of measure
+/// \param[in] output_units output units of measure
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _S_PH(double p, double h, const char * Xiunits, const char * Xounits)
+ LPXLOPER12 _S_PH(double p, double h, Units input_units, Units output_units)
 {
 	try {
-		std::string iunits = Xiunits;
-		std::string ounits = Xounits;
-		int input_units = check_input_units(iunits);
-		int output_units = check_output_units(ounits);
-		if (input_units== ENGLISH) {
+		if (input_units ==  ENGLISH) {
 			p = convert_pressure_english_to_si(p);
 			h = convert_enthalpy_english_to_si(h);
 		}
@@ -1409,7 +1313,7 @@ const double THCON_a[THCON_a_COUNT] = {
 				throw "invalid region number in s_ph";
 		}
 		// convert units
-		if (output_units== ENGLISH)
+		if (output_units ==  ENGLISH)
 			s = convert_entropy_si_to_english(s);
 		// return
 		return s;

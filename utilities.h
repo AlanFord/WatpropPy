@@ -32,18 +32,18 @@
 //////////////////////////////////////////////////////
 /// flag for SI units
 //////////////////////////////////////////////////////
-#define SI 0
+//#define SI 0
 //////////////////////////////////////////////////////
 /// flag for ENGLISH units
 //////////////////////////////////////////////////////
-#define ENGLISH 1
+//#define ENGLISH 1
 
 double interpolate(const double x[], const double y[], int size, double given);
 double zeroin1(double (*f)(double, double), double dummy, double ax, double bx, double target, double tol);	
 double zeroin2(double (*f)(double, double), double dummy, double ax, double bx, double target, double tol);	
 
-int check_input_units(std::string units);
-int check_output_units(std::string units);
+//int check_input_units(std::string units);
+//int check_output_units(std::string units);
 
 double convert_pressure_si_to_english(double pressure);
 double convert_pressure_english_to_si(double pressure);
