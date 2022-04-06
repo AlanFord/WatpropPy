@@ -1,14 +1,13 @@
 /////////////////////////////////////////////////////////////////////////
-///	\file watprop.cpp
+///	\file wat.cpp
 ///	\brief Calculations of properties of water and steam.
 ///
 ///	\author Alan Ford
 ///
-/// This file was modified for use by Dominion Energy
 /////////////////////////////////////////////////////////////////////////
 
 /*
- Copyright (c) 1995-2017 Charles Alan Ford
+ Copyright (c) 1995-2022 Charles Alan Ford
  
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
