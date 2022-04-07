@@ -26,18 +26,12 @@
  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-// The following ifdef block is the standard way of creating macros which make exporting 
-// from a DLL simpler. All files within this DLL are compiled with the WATPROP_EXPORTS
-// symbol defined on the command line. This symbol should not be defined on any project
-// that uses this DLL. This way any other project whose source files include this file see 
-// WATPROP_API functions as being imported from a DLL, whereas this DLL sees symbols
-// defined with this macro as being exported.
 #define WATPROP_API	
 #define LPXLOPER12 double
 #define XLOPER12 double						
 //typedef char* LPWSTR, *PWSTR;
 
-enum Units { METRIC, ENGLISH};
+enum Units {SI, ENGLISH};
 
 WATPROP_API const char * _WatpropPyVersion(void);
 
