@@ -28,6 +28,9 @@
 
 cimport wat
 
+cpdef enum Units:
+	SI = wat.Units.SI
+	ENGLISH = wat.Units.ENGLISH
 
 def H_PT(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific enthalpy of water/steam as a function of pressure and temperature'''
