@@ -1,11 +1,11 @@
-# test WatpropPy at IAPWS test points as a function of P,T
+# test WatpropPy at IAPWS statepoints as a function of P,T
 import pytest
 
 import WatpropPy
 
 pytestmark = pytest.mark.basic
 
-tol = 1e-8
+tol = 1e-7
 data = [
 	[3.0,      300.0, 0.100215168E-02, 0.115331273E+03, 0.392294792E+00, 0.150773921E+04, 0.417301218E+01],
 	[80.0,     300.0, 0.971180894E-03, 0.184142828E+03, 0.368563852E+00, 0.163469054E+04, 0.401008987E+01],
