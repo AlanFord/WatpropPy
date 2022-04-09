@@ -6,6 +6,7 @@ import WatpropPy
 pytestmark = pytest.mark.basic
 
 tol = 1e-7
+#       pressure,     deg-K,   spVol,           enthalpy,        entropy,         speedOfSound,    heatCap
 data = [
 	[0.255837018E+02, 650.0, 0.200000000E-02, 0.186343019E+04, 0.405427273E+01, 0.502005554E+03, 0.138935717E+02],
 	[0.222930643E+02, 650.0, 0.500000000E-02, 0.237512401E+04, 0.485438792E+01, 0.383444594E+03, 0.446579342E+02],
