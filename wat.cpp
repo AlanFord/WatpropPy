@@ -34,6 +34,7 @@
 #include "wat.h"
 #include "utilities.h"
 #include "iapws.h"
+#include <stdexcept>      // std::invalid_argument
 
 ////////////////////////////////////////////////////////
 ///	string identifying the version of the WATPROP library
@@ -151,9 +152,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return h;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -202,9 +203,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 			v = convert_spvolume_si_to_english(v);
 		return v;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -257,9 +258,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return w;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -302,9 +303,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return h;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -347,9 +348,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return h;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -391,9 +392,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return v;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -435,9 +436,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return v;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -465,9 +466,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return p;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -495,9 +496,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return t;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -550,9 +551,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return s;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -605,9 +606,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return cp;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -693,9 +694,9 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		// return
 		return vis;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -822,9 +823,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		return k;
 
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -867,9 +868,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return s;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -912,9 +913,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return s;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -954,9 +955,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return h;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -996,9 +997,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return h;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -1037,9 +1038,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return v;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -1078,9 +1079,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return v;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -1120,9 +1121,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return s;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -1162,9 +1163,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return s;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -1215,9 +1216,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return t;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -1266,9 +1267,9 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return v;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }
 
@@ -1317,11 +1318,8 @@ const double THCON_a[THCON_a_COUNT] = {
 		// return
 		return s;
 	}
-	catch(...) {
-		// for now, just rethrow the original error
-		throw;
-		//xResult.xltype = xltypeErr;
-		//xResult.val.err = xlerrValue;
-		//return (LPXLOPER12) &xResult;
+	catch(char const* chowder) {
+		// rethrow the original error message as std::invalid_argument
+		throw std::invalid_argument(chowder);
 	}
 }

@@ -57,7 +57,7 @@ class TestEnthalpy():
 	def test_Case7(self):
 		temperature = 0
 		pressure =    100.1
-		with pytest.raises(RuntimeError) as excinfo:
+		with pytest.raises(ValueError) as excinfo:
 			WatpropPy.H_PT(pressure,temperature,si,si)
 		assert "pressure out of bounds" in str(excinfo.value)
 
