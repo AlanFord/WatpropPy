@@ -329,7 +329,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		}
 		// verify that saturation conditions can exist at this temperature
 		if ((t < 273.15) || (t > 647.096))
-			throw "invalid temperature in hf_t";
+			throw "invalid temperature in hg_t";
 		// calculate the saturation pressure
 		double p = PSAT_T(t);
 		double h = 0;
@@ -374,7 +374,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		}
 		// verify that saturation conditions can exist at this temperature
 		if ((t < 273.15) || (t > 647.096))
-			throw "invalid temperature in hf_t";
+			throw "invalid temperature in vf_t";
 		// calculate the saturation pressure
 		double p = PSAT_T(t);
 		double v = 0;
@@ -418,7 +418,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 		}
 		// verify that saturation conditions can exist at this temperature
 		if ((t < 273.15) || (t > 647.096))
-			throw "invalid temperature in hf_t";
+			throw "invalid temperature in vg_t";
 		// calculate the saturation pressure
 		double p = PSAT_T(t);
 		double v = 0;
@@ -849,7 +849,7 @@ const double THCON_a[THCON_a_COUNT] = {
 		}
 		// verify that saturation conditions can exist at this temperature
 		if ((t < 273.15) || (t > 647.096))
-			throw "invalid temperature in hf_t";
+			throw "invalid temperature in sf_t";
 		// calculate the saturation pressure
 		double p = PSAT_T(t);
 		double s = 0;
@@ -894,7 +894,7 @@ const double THCON_a[THCON_a_COUNT] = {
 		}
 		// verify that saturation conditions can exist at this temperature
 		if ((t < 273.15) || (t > 647.096))
-			throw "invalid temperature in hf_t";
+			throw "invalid temperature in sg_t";
 		// calculate the saturation pressure
 		double p = PSAT_T(t);
 		double s = 0;
