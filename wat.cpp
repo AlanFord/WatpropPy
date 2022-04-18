@@ -113,7 +113,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _H_PT(double p, double t, Units input_units, Units output_units)
+ LPXLOPER12 H_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -168,7 +168,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _V_PT(double p, double t, Units input_units, Units output_units)
+ LPXLOPER12 V_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -219,7 +219,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return speed of sound
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _W_PT(double p, double t, Units input_units, Units output_units)
+ LPXLOPER12 W_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -273,7 +273,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _HF_T(double t, Units input_units, Units output_units)
+ LPXLOPER12 HF_T(double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -318,7 +318,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _HG_T(double t, Units input_units, Units output_units)
+ LPXLOPER12 HG_T(double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -363,7 +363,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VF_T(double t, Units input_units, Units output_units)
+ LPXLOPER12 VF_T(double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -407,7 +407,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VG_T(double t, Units input_units, Units output_units)
+ LPXLOPER12 VG_T(double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -451,7 +451,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return pressure
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _P_T(double t, Units input_units, Units output_units)
+ LPXLOPER12 P_T(double t, Units input_units, Units output_units)
 {
 	try {
 		// convert the temperature to kelvin if necessary
@@ -481,7 +481,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return temperature
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _T_P(double p, Units input_units, Units output_units)
+ LPXLOPER12 T_P(double p, Units input_units, Units output_units)
 {
 	try {
 		// convert the pressure to MPa if necessary
@@ -512,7 +512,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _S_PT(double p, double t, Units input_units, Units output_units)
+ LPXLOPER12 S_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -567,7 +567,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return isobaric heat capacity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _CP_PT(double p, double t, Units input_units, Units output_units)
+ LPXLOPER12 CP_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -622,7 +622,7 @@ static LPWSTR rgFuncs[rgFuncsRows][rgFuncsCols] = {
 ///
 /// \return dynamic viscosity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VIS_PT(double p, double t, Units input_units, Units output_units)
+ LPXLOPER12 VIS_PT(double p, double t, Units input_units, Units output_units)
 {
 	double t_star = 647.226;
 	double d_star = 317.763;
@@ -738,7 +738,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return thermal conductivity
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _K_PT(double p, double t, Units input_units, Units output_units)
+ LPXLOPER12 K_PT(double p, double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -838,7 +838,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _SF_T(double t, Units input_units, Units output_units)
+ LPXLOPER12 SF_T(double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -883,7 +883,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _SG_T(double t, Units input_units, Units output_units)
+ LPXLOPER12 SG_T(double t, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -928,7 +928,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _HF_P(double p, Units input_units, Units output_units)
+ LPXLOPER12 HF_P(double p, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -970,7 +970,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _HG_P(double p, Units input_units, Units output_units)
+ LPXLOPER12 HG_P(double p, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -1012,7 +1012,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VF_P(double p, Units input_units, Units output_units)
+ LPXLOPER12 VF_P(double p, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -1053,7 +1053,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific volume
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _VG_P(double p, Units input_units, Units output_units)
+ LPXLOPER12 VG_P(double p, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -1094,7 +1094,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _SF_P(double p, Units input_units, Units output_units)
+ LPXLOPER12 SF_P(double p, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -1136,7 +1136,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific enthalpy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _SG_P(double p, Units input_units, Units output_units)
+ LPXLOPER12 SG_P(double p, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -1179,7 +1179,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return temperature
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _T_PH(double p, double h, Units input_units, Units output_units)
+ LPXLOPER12 T_PH(double p, double h, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -1232,7 +1232,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _V_PH(double p, double h, Units input_units, Units output_units)
+ LPXLOPER12 V_PH(double p, double h, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {
@@ -1283,7 +1283,7 @@ const double THCON_a[THCON_a_COUNT] = {
 ///
 /// \return specific entropy
 ///////////////////////////////////////////////////////////////////////////////
- LPXLOPER12 _S_PH(double p, double h, Units input_units, Units output_units)
+ LPXLOPER12 S_PH(double p, double h, Units input_units, Units output_units)
 {
 	try {
 		if (input_units ==  ENGLISH) {

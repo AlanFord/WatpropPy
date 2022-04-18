@@ -5,6 +5,9 @@ import WatpropPy
 
 pytestmark = pytest.mark.basic
 
+si = WatpropPy.units.si
+english = WatpropPy.units.english
+
 tol = 1e-7
 data = [
 	[3.0,              300.0, 0.100215168E-02, 0.392294792E+00],
@@ -26,288 +29,288 @@ class TestTemperature():
 		index = 0
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case1(self):
 		index = 1
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case2(self):
 		index = 2
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case3(self):
 		index = 3
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case4(self):
 		index = 4
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case5(self):
 		index = 5
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case6(self):
 		index = 6
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case7(self):
 		index = 7
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case8(self):
 		index = 8
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case9(self):
 		index = 9
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case10(self):
 		index = 10
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case11(self):
 		index = 11
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      inTemp
-		assert WatpropPy.T_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.t_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 class TestSpecificVolume():
 	def test_Case0(self):
 		index = 0
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case1(self):
 		index = 1
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case2(self):
 		index = 2
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case3(self):
 		index = 3
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case4(self):
 		index = 4
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case5(self):
 		index = 5
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case6(self):
 		index = 6
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case7(self):
 		index = 7
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case8(self):
 		index = 8
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case9(self):
 		index = 9
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case10(self):
 		index = 10
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case11(self):
 		index = 11
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][2]
-		assert WatpropPy.V_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.v_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 class TestEntropy():
 	def test_Case0(self):
 		index = 0
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case1(self):
 		index = 1
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case2(self):
 		index = 2
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case3(self):
 		index = 3
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case4(self):
 		index = 4
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case5(self):
 		index = 5
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case6(self):
 		index = 6
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case7(self):
 		index = 7
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case8(self):
 		index = 8
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case9(self):
 		index = 9
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case10(self):
 		index = 10
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case11(self):
 		index = 11
 		pressure =    data[index][0]
 		inTemp = data[index][1]-273.15
-		enthalpy = WatpropPy.H_PT(pressure,inTemp,WatpropPy.Units.SI, WatpropPy.Units.SI)
+		enthalpy = WatpropPy.h_pt(pressure,inTemp,si, si)
 		answer =      data[index][3]
-		assert WatpropPy.S_PH(pressure,enthalpy,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.s_ph(pressure,enthalpy,si, si) == pytest.approx(answer,rel=tol)

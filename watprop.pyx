@@ -28,111 +28,111 @@
 
 cimport wat
 
-cpdef enum Units:
-	SI = wat.Units.SI
-	ENGLISH = wat.Units.ENGLISH
+cpdef enum units:
+	si = wat.Units.SI
+	english = wat.Units.ENGLISH
 
 # functions of (p,t)
 
-def CP_PT(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def cp_pt(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the heat capacity of water/steam as a function of pressure and temperature'''
-	return wat._CP_PT(p, t, iunits, ounits)
+	return wat.CP_PT(p, t, iunits, ounits)
 
-def H_PT(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def h_pt(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific enthalpy of water/steam as a function of pressure and temperature'''
-	return wat._H_PT(p, t, iunits, ounits)
+	return wat.H_PT(p, t, iunits, ounits)
 
-def K_PT(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def k_pt(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the thermal conductivity of water/steam as a function of pressure and temperature'''
-	return wat._K_PT(p, t, iunits, ounits)
+	return wat.K_PT(p, t, iunits, ounits)
 
-def S_PT(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def s_pt(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific entropy of water/steam as a function of pressure and temperature'''
-	return wat._S_PT(p, t, iunits, ounits)
+	return wat.S_PT(p, t, iunits, ounits)
 
-def V_PT(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def v_pt(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific volume of water/steam as a function of pressure and temperature'''
-	return wat._V_PT(p, t, iunits, ounits)
+	return wat.V_PT(p, t, iunits, ounits)
 
-def VIS_PT(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def vis_pt(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the dynamic viscosity of water/steam as a function of pressure and temperature'''
-	return wat._VIS_PT(p, t, iunits, ounits)
+	return wat.VIS_PT(p, t, iunits, ounits)
 
-def W_PT(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def w_pt(double p, double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the speed of sound in water/steam as a function of pressure and temperature'''
-	return wat._W_PT(p, t, iunits, ounits)
+	return wat.W_PT(p, t, iunits, ounits)
 
 # functions of (t)
 
-def P_T(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def p_t(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the saturation pressure of water/steam as a function of temperature'''
-	return wat._P_T(t, iunits, ounits)
+	return wat.P_T(t, iunits, ounits)
 
-def HF_T(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def hf_t(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific enthalpy of water at saturation conditions as a function of temperature'''
-	return wat._HF_T(t, iunits, ounits)
+	return wat.HF_T(t, iunits, ounits)
 
-def HG_T(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def hg_t(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific enthalpy of steam at saturation conditions as a function of temperature'''
-	return wat._HG_T(t, iunits, ounits)
+	return wat.HG_T(t, iunits, ounits)
 
-def SF_T(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def sf_t(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific entropy of water at saturation conditions as a function of temperature'''
-	return wat._SF_T(t, iunits, ounits)
+	return wat.SF_T(t, iunits, ounits)
 
-def SG_T(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def sg_t(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific entropy of steam at saturation conditions as a function of temperature'''
-	return wat._SG_T(t, iunits, ounits)
+	return wat.SG_T(t, iunits, ounits)
 
-def VF_T(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def vf_t(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific volume of water at saturation conditions as a function of temperature'''
-	return wat._VF_T(t, iunits, ounits)
+	return wat.VF_T(t, iunits, ounits)
 
-def VG_T(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def vg_t(double t, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific volume of steam at saturation conditions as a function of temperature'''
-	return wat._VG_T(t, iunits, ounits)
+	return wat.VG_T(t, iunits, ounits)
 	
 # functions of (p)
 
-def T_P(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def t_p(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the saturation temperature of water/steam as a function of pressure'''
-	return wat._T_P(p, iunits, ounits)
+	return wat.T_P(p, iunits, ounits)
 
-def HF_P(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def hf_p(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific enthalpy of water at saturation conditions as a function of pressure'''
-	return wat._HF_P(p, iunits, ounits)
+	return wat.HF_P(p, iunits, ounits)
 
-def HG_P(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def hg_p(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific enthalpy of steam at saturation conditions as a function of pressure'''
-	return wat._HG_P(p, iunits, ounits)
+	return wat.HG_P(p, iunits, ounits)
 
-def SF_P(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def sf_p(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific entropy of water at saturation conditions as a function of pressure'''
-	return wat._SF_P(p, iunits, ounits)
+	return wat.SF_P(p, iunits, ounits)
 
-def SG_P(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def sg_p(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific entropy of steam at saturation conditions as a function of pressure'''
-	return wat._SG_P(p, iunits, ounits)
+	return wat.SG_P(p, iunits, ounits)
 
-def VF_P(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def vf_p(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific volume of water at saturation conditions as a function of pressure'''
-	return wat._VF_P(p, iunits, ounits)
+	return wat.VF_P(p, iunits, ounits)
 
-def VG_P(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def vg_p(double p, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific volume of steam at saturation conditions as a function of pressure'''
-	return wat._VG_P(p, iunits, ounits)
+	return wat.VG_P(p, iunits, ounits)
 	
 # functions of (p,h)
 
-def T_PH(double p, double h, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def t_ph(double p, double h, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the temperature of water/steam as a function of pressure and specific enthalpy'''
-	return wat._T_PH(p, h, iunits, ounits)
+	return wat.T_PH(p, h, iunits, ounits)
 
-def S_PH(double p, double h, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def s_ph(double p, double h, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific entropy of water/steam as a function of pressure and specific enthalpy'''
-	return wat._S_PH(p, h, iunits, ounits)
+	return wat.S_PH(p, h, iunits, ounits)
 
-def V_PH(double p, double h, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
+def v_ph(double p, double h, wat.Units iunits=wat.Units.ENGLISH, wat.Units ounits=wat.Units.ENGLISH):
 	'''Returns the specific volume of water/steam as a function of pressure and specific enthalpy'''
-	return wat._V_PH(p, h, iunits, ounits)
+	return wat.V_PH(p, h, iunits, ounits)
 

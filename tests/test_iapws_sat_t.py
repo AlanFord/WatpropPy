@@ -5,6 +5,9 @@ import WatpropPy
 
 pytestmark = pytest.mark.basic
 
+si = WatpropPy.units.si
+english = WatpropPy.units.english
+
 tol = 1e-7
 data = [
 	[623.15,  0.165291643E+02],
@@ -19,31 +22,31 @@ class TestEnthalpy():
 		index = 0
 		temperature = data[index][0]-273.15
 		answer =      data[index][1]
-		assert WatpropPy.P_T(temperature,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.p_t(temperature,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case1(self):
 		index = 1
 		temperature = data[index][0]-273.15
 		answer =      data[index][1]
-		assert WatpropPy.P_T(temperature,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.p_t(temperature,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case2(self):
 		index = 2
 		temperature = data[index][0]-273.15
 		answer =      data[index][1]
-		assert WatpropPy.P_T(temperature,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.p_t(temperature,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case3(self):
 		index = 3
 		temperature = data[index][0]-273.15
 		answer =      data[index][1]
-		assert WatpropPy.P_T(temperature,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.p_t(temperature,si, si) == pytest.approx(answer,rel=tol)
 
 	def test_Case4(self):
 		index = 4
 		temperature = data[index][0]-273.15
 		answer =      data[index][1]
-		assert WatpropPy.P_T(temperature,WatpropPy.Units.SI, WatpropPy.Units.SI) == pytest.approx(answer,rel=tol)
+		assert WatpropPy.p_t(temperature,si, si) == pytest.approx(answer,rel=tol)
 
 
 
