@@ -6,6 +6,8 @@ ext = Extension("WatpropPy",
                 sources=["watprop.pyx", "wat.cpp", "mymath.cpp", "region.cpp", "region1.cpp", "region2.cpp", "region3.cpp", "region4.cpp", "region5.cpp", "region23.cpp", "utilities.cpp"])
 
 setup(name='WatpropPy',
+    version='0.0.1',
+    author= 'Alan Ford',
     ext_modules=(cythonize([ext],language_level = "3")),
     zip_safe=False,
 )
