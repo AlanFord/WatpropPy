@@ -18,7 +18,7 @@ OBJECTS = $(CPP_OBJECTS) $(C_OBJECTS)
 all: $(TARGET_LIB)
 
 cython:
-	-rm -r build watprop.c watprop.cpp watprop.*.so
+	-rm -r build watprop.c watprop.cpp
 	python setup.py build_ext -if
 
 $(TARGET_LIB): $(OBJECTS)
@@ -31,4 +31,4 @@ $(TARGET_LIB): $(OBJECTS)
 	$(GCC) -c -o $@ $< $(CFLAGS)
 
 clean:
-	-rm -r *.o *.so watprop.c watprop.cpp watprop.*.so
+	-rm -r *.o watprop.c watprop.cpp 
