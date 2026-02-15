@@ -17,3 +17,11 @@ numerical models when steam tables are used as inputs to engineering work.
 WatpropPy is still in development.  At this time the interface remains close to the original
 WATPROP API.  For example, to determine the enthalpy at 2250 psia and 546 deg F the function
 call would be H_PT(22050, 547).  Available units are English (the default) and SI.
+
+Compilation and testing require a C++ compiler (compliant with C++11) and the following Python packages:
+
+- Python (version >= 3.10)
+- Cython
+- python-abi3
+- pytest
+
